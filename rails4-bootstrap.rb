@@ -45,7 +45,6 @@ gem_group :development, :test do
 end
 
 gem_group :test do
-  gem "mongoid-rspec"
   gem "ffaker"
   gem "simplecov", require: false
   gem "database_cleaner"
@@ -54,7 +53,7 @@ end
 
 gem "bootstrap-sass", "~> 2.3.2.1"
 gem "font-awesome-sass-rails"
-gem "simple_form", github: "plataformatec/simple_form"
+gem "simple_form"
 gem "devise", "~> 3.0.0"
 gem "cancan"
 gem "omniauth"
