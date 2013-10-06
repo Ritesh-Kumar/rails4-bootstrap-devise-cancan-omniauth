@@ -1,5 +1,4 @@
 ### Initial setup
-remove_file 'config/database.yml'
 remove_file 'app/assets/stylesheets/application.css'
 remove_file 'app/controllers/application_controller.rb'
 remove_file 'app/views/layouts/application.html.erb'
@@ -14,8 +13,6 @@ require 'rails/all'
 eos
 end
 
-gsub_file 'config/environments/development.rb', 'config.active_record', '#config.active_record'
-gsub_file 'config/environments/production.rb', 'config.active_record', '#config.active_record'
 
 ### Gems
 remove_file 'Gemfile'
@@ -66,6 +63,8 @@ gem "omniauth-twitter"
 gem "hashugar", github: "alex-klepa/hashugar"
 
 run 'bundle install'
+run 'rake db:create db:migrate'
+
 
 ### Generators
 generate 'simple_form:install --bootstrap'
